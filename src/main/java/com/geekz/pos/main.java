@@ -31,9 +31,9 @@ public class main {
 		ClientOrder orderdb = order.readClientOrder(1);
 		
 		ItemRepoController item =  new ItemRepoController();
-		item.addNewItem("kg", "kg", "23.50", "2014/12/12");
+		item.addNewItem("Chili", "kg", "kg", "23.50", "2014/12/12");
 		ItemRepo itemDb = item.readRepoItem(1);
-		
+				
 		ItemOrderController itemOrder = new ItemOrderController();
 		itemOrder.addNewItemOrder(10.00, 7.00, orderdb, itemDb);
  		System.out.println();

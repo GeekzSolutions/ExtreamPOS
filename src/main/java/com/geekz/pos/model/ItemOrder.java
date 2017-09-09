@@ -28,8 +28,9 @@ public class ItemOrder {
 	@ManyToOne
 	@JoinColumn(name = "clientOrderId", nullable = false)
 	private ClientOrder clientOrder;
-	
-	@OneToOne(fetch = FetchType.LAZY, mappedBy = "itemObj", cascade = CascadeType.ALL)
+		
+	@OneToOne
+	@JoinColumn(name = "itemFKId")
 	private ItemRepo itemRepo;
 
 	public ItemOrder() {

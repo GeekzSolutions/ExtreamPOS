@@ -14,8 +14,6 @@ public class Main extends Application
 {
     private double xOffset = 0;
     private double yOffset = 0;
-
-    @SuppressWarnings("restriction")
 	@Override
     public void start(final Stage primaryStage) throws Exception
     {
@@ -32,6 +30,7 @@ public class Main extends Application
                     primaryStage.setOpacity(0.5);
                 }
             });
+            
             root.setOnMouseDragged(new EventHandler<MouseEvent>() {
                 public void handle(MouseEvent event) {
                     primaryStage.setX(event.getScreenX() - xOffset);

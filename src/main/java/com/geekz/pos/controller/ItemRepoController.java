@@ -5,8 +5,8 @@ import com.geekz.pos.model.ItemRepo;
 
 public class ItemRepoController {
 	
-	public void addNewItem(String inItemUnit, String outItemUnit, String price, String date) {
-		ItemRepo teller = new ItemRepo(inItemUnit, outItemUnit, price, date);
+	public void addNewItem(String name, String inItemUnit, String outItemUnit, String price, String date) {
+		ItemRepo teller = new ItemRepo(name, inItemUnit, outItemUnit, price, date);
 		HibernateOperator.getInstance().add(ItemRepo.class, teller);
 	}
 

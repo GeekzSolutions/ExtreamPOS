@@ -2,13 +2,12 @@ package com.geekz.pos.model;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
-import javax.persistence.PrimaryKeyJoinColumn;
 
 @Entity
 public class ItemRepo {
@@ -16,32 +15,50 @@ public class ItemRepo {
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
 	private Integer itemId;
-	
+
+	@Column(length = 50)
+	private String itemName;
+
 	@Column(length = 15)
 	private String inItemUnit;
-	
+
 	@Column(length = 15)
 	private String outItemUnit;
-	
+
 	@Column(length = 15)
 	private String price;
-	
+
 	@Column(length = 15)
 	private String date;
-	
-	@OneToOne(fetch = FetchType.LAZY)
-	@PrimaryKeyJoinColumn
-	private ItemRepo itemObj;
-	
+
+	@OneToOne(mappedBy = "itemRepo", cascade = CascadeType.ALL)
+	private ItemOrder itemRepoObj;
 
 	public ItemRepo() {
 	}
-	
-	public ItemRepo(String inItemUnit, String outItemUnit, String price, String date) {
+
+	public ItemRepo(String itemName, String inItemUnit, String outItemUnit, String price, String date) {
+		this.itemName = itemName;
 		this.inItemUnit = inItemUnit;
 		this.outItemUnit = outItemUnit;
 		this.price = price;
 		this.date = date;
+	}
+
+	public String getItemName() {
+		return itemName;
+	}
+
+	public void setItemName(String itemName) {
+		this.itemName = itemName;
+	}
+
+	public ItemOrder getItemRepoObj() {
+		return itemRepoObj;
+	}
+
+	public void setItemRepoObj(ItemOrder itemRepoObj) {
+		this.itemRepoObj = itemRepoObj;
 	}
 
 	public Integer getItemId() {
@@ -84,20 +101,4 @@ public class ItemRepo {
 		this.date = date;
 	}
 
-	/**
-	 * @return the itemObj
-	 */
-	public ItemRepo getItemObj() {
-		return itemObj;
-	}
-
-	/**
-	 * @param itemObj the itemObj to set
-	 */
-	public void setItemObj(ItemRepo itemObj) {
-		this.itemObj = itemObj;
-	}
-	
-	
-	
 }

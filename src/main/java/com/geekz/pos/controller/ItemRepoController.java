@@ -6,8 +6,8 @@ import com.geekz.pos.model.ItemRepo;
 public class ItemRepoController {
 	
 	public void addNewItem(String name, String inItemUnit, String outItemUnit, String price, String date) {
-		ItemRepo teller = new ItemRepo(name, inItemUnit, outItemUnit, price, date);
-		HibernateOperator.getInstance().add(ItemRepo.class, teller);
+		ItemRepo item = new ItemRepo(name, inItemUnit, outItemUnit, price, date);
+		HibernateOperator.getInstance().add(ItemRepo.class, item);
 	}
 
 	public ItemRepo readRepoItem(Integer i) {
@@ -15,8 +15,9 @@ public class ItemRepoController {
 		return item;
 	}
 	
-	public void editItem() {
-
+	public void editItem(Integer i, String name, String inItemUnit, String outItemUnit, String price, String date) {
+		ItemRepo item = new ItemRepo(i, name, inItemUnit, outItemUnit, price, date);
+		HibernateOperator.getInstance().edit(ItemRepo.class, item);
 	}
 
 	public void removeItem() {

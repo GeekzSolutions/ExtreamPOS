@@ -22,15 +22,21 @@ public class Teller {
 	private String name;
 
 	@Column(length = 15)
-	private String	 teleNo;
+	private String teleNo;
 
 	@OneToMany(mappedBy = "teller")
 	private List<ClientOrder> orderList;
 
 	public Teller() {
 	}
-	
+
 	public Teller(String name, String tele) {
+		this.name = name;
+		this.teleNo = tele;
+	}
+
+	public Teller(Integer i, String name, String tele) {
+		this.idTeller = i;
 		this.name = name;
 		this.teleNo = tele;
 	}

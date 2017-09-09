@@ -6,7 +6,7 @@ public interface GeekzORM {
 		
 	public Object read(Class<?> clz, Integer id);
 	
-	public Object[] edit();
+	public Object edit(Class<?> clz, Object saveObj);
 	
 	public Object add(Class<?> clz, Object saveObj);
 	

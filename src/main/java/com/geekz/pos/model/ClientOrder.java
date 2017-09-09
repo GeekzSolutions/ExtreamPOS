@@ -19,31 +19,40 @@ public class ClientOrder {
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
 	private Integer orderId;
-	
+
 	@Column(length = 15)
 	private String orderDate;
-	
+
 	@Column(length = 15)
 	private String returnDate;
-	
+
 	@Column(length = 10)
 	private String status;
-	
+
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "tellerId", nullable = false)
 	private Teller teller;
-	
+
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "clientID", nullable = false)
 	private Client client;
 
 	@OneToMany(mappedBy = "clientOrder")
 	private List<ItemOrder> itemList;
-	
+
 	public ClientOrder() {
 	}
-	
+
 	public ClientOrder(String orderDate, String returnDate, String status, Teller teller, Client client) {
+		this.orderDate = orderDate;
+		this.returnDate = returnDate;
+		this.status = status;
+		this.teller = teller;
+		this.client = client;
+	}
+
+	public ClientOrder(Integer i, String orderDate, String returnDate, String status, Teller teller, Client client) {
+		this.orderId = i;
 		this.orderDate = orderDate;
 		this.returnDate = returnDate;
 		this.status = status;

@@ -16,8 +16,9 @@ public class TellerController {
 		return teller;
 	}
 	
-	public void editTellerInfo() {
-
+	public void editTellerInfo(Integer i, String name, String tele) {
+		Teller teller = new Teller(i, name, tele);
+		HibernateOperator.getInstance().edit(Teller.class, teller);
 	}
 
 	public void removeTeller() {

@@ -17,7 +17,9 @@ public class ClientOrderController {
 		return order;
 	}
 	
-	public void editOrder() {
+	public void editOrder(Integer i, String orderDate, String returnDate, String status, Teller teller, Client client) {
+		ClientOrder order = new ClientOrder(i, orderDate, returnDate, status, teller, client);
+		HibernateOperator.getInstance().edit(ClientOrder.class, order);
 
 	}
 

@@ -19,8 +19,9 @@ public class ItemOrderController {
 		return order;
 	}
 	
-	public void editItemOrder() {
-
+	public void editItemOrder(Integer i, Double inAmount, Double outAmount, ClientOrder clientOrder, ItemRepo itemRepo) {
+		ItemOrder order = new ItemOrder(i, inAmount, outAmount, clientOrder, itemRepo);
+		HibernateOperator.getInstance().edit(ItemOrder.class, order);
 	}
 
 	public void removeItemOrder() {

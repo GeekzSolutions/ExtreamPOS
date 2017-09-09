@@ -65,9 +65,22 @@ public class HibernateOperator implements GeekzORM {
 		return results;
 	}
 
-	public Object[] edit() {
-		// TODO Auto-generated method stub
-		return null;
+	public Object edit(Class<?> clz, Object saveObj) {
+
+		Transaction tx = null;
+		Session session = factory.openSession();
+		try {
+			tx = session.beginTransaction();
+			session.update(saveObj);
+			tx.commit();
+		} catch (HibernateException ex) {
+			if (tx != null)
+				tx.rollback();
+			ex.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return saveObj;
 	}
 
 	public Object add(Class<?> clz, Object saveObj) {

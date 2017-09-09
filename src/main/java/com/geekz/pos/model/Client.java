@@ -43,6 +43,14 @@ public class Client {
 		this.regDate = regDate;
 	}
 
+	public Client(Integer i, String name, String address, String tele, String regDate) {
+		this.clientId = i;
+		this.name = name;
+		this.address = address;
+		this.tele = tele;
+		this.regDate = regDate;
+	}
+
 	public Integer getClientId() {
 		return clientId;
 	}

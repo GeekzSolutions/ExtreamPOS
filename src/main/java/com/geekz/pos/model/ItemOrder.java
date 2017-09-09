@@ -44,6 +44,13 @@ public class ItemOrder {
 		this.itemRepo = itemRepo;
 	}
 
+	public ItemOrder(Integer i, Double inAmount, Double outAmount, ClientOrder clientOrder, ItemRepo itemRepo) {
+		this.inAmount = inAmount;
+		this.outAmount = outAmount;
+		this.clientOrder = clientOrder;
+		this.itemRepo = itemRepo;
+	}
+
 	public Integer getItemOrderId() {
 		return itemOrderId;
 	}

@@ -45,6 +45,15 @@ public class ItemRepo {
 		this.date = date;
 	}
 
+	public ItemRepo(Integer i, String itemName, String inItemUnit, String outItemUnit, String price, String date) {
+		this.itemId = i;
+		this.itemName = itemName;
+		this.inItemUnit = inItemUnit;
+		this.outItemUnit = outItemUnit;
+		this.price = price;
+		this.date = date;
+	}
+
 	public String getItemName() {
 		return itemName;
 	}

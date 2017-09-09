@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="579.0" prefWidth="774.0" style="-fx-background-color: #3C3F41; -fx-background-radius: 6;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="geekz.pos.controllers.dashboardController">
+   <children>
+      <JFXButton layoutY="1.0" ripplerFill="#eef2f5" style="-fx-border-radius: 8;" text="Menu" textFill="#3498db" />
+      <Pane layoutY="233.0" prefHeight="308.0" prefWidth="774.0" style="-fx-border-color: #3498db;" />
+      <Label layoutX="299.0" layoutY="26.0" text="Customer Selection" textFill="#3498db">
+         <font>
+            <Font name="Ubuntu" size="20.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="147.0" layoutY="93.0" text="New Customer" textFill="#938a8a" />
+      <JFXButton layoutX="455.0" layoutY="90.0" text="Registered Customer" textFill="#938a8a" />
+      <JFXButton layoutX="713.0" layoutY="552.0" style="-fx-border-radius: 6; -fx-border-color: #534f4f;" text="Skip.." textFill="#d33b3b">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

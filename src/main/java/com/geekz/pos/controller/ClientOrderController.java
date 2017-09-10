@@ -13,7 +13,7 @@ public class ClientOrderController {
 
 	public void addNewOrder(String orderDate, String returnDate, String status, Teller teller, Client client) {
 		ClientOrder order = new ClientOrder(orderDate, returnDate, status, teller, client);
-		logger.info("add New Client Order -" + orderDate + "," + returnDate + "," + status + "," + teller.getIdTeller()
+		logger.info("add New Client Order -" + orderDate + "," + returnDate + "," + status + "," + teller.getUserName()
 				+ "," + client.getClientId());
 		HibernateOperator.getInstance().add(ClientOrder.class, order);
 	}
@@ -27,7 +27,7 @@ public class ClientOrderController {
 	public void editOrder(Integer i, String orderDate, String returnDate, String status, Teller teller, Client client) {
 		ClientOrder order = new ClientOrder(i, orderDate, returnDate, status, teller, client);
 		logger.info("Edit Client Order id-" + i + "," + orderDate + "," + returnDate + "," + status + ","
-				+ teller.getIdTeller() + "," + client.getClientId());
+				+ teller.getUserName() + "," + client.getClientId());
 		HibernateOperator.getInstance().edit(ClientOrder.class, order);
 
 	}

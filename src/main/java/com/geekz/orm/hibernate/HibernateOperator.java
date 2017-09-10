@@ -74,6 +74,24 @@ public class HibernateOperator implements GeekzORM {
 		return results;
 	}
 
+	public Object read(Class<?> clz, String strId) {
+		Session sesn = factory.openSession();
+		Transaction tx = null;
+		Object results = null;
+		try {
+			tx = sesn.beginTransaction();
+			logger.info("Hibernate Read - "+ clz.getName() + " get record ID : " + strId);
+			results = sesn.get(clz, strId);
+			tx.commit();
+			logger.info("Hibernate Read - Done");
+		} catch (HibernateException e) {
+			logger.error(e);
+		} finally {
+			sesn.close();
+		}
+		return results;
+	}
+
 	public Object edit(Class<?> clz, Object saveObj) {
 
 		Transaction tx = null;
@@ -108,7 +126,7 @@ public class HibernateOperator implements GeekzORM {
 		} catch (HibernateException ex) {
 			if (tx != null) {
 				tx.rollback();
-				logger.info("rollback the transaction");
+				logger.info("rollback the transaction" + " - May be a duplicate entry insertion");
 			}
 			logger.error(ex);
 		} finally {

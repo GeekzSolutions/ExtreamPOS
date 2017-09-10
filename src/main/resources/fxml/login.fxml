@@ -17,12 +17,13 @@
             <Image url="@../images/posBackground.jpeg" />
          </image>
       </ImageView>
-      <JFXTextField focusColor="#3498db" labelFloat="true" layoutX="412.0" layoutY="169.0" prefHeight="24.0" prefWidth="229.0" promptText="Username" style="-fx-prompt-text-fill: #ddc7c7; -fx-prompt-text-opacity: 0.8; -fx-text-fill: #3498db;" unFocusColor="#ddc7c7e5">
+      <JFXTextField focusColor="#3498db" fx:id="txtUsername" labelFloat="true" layoutX="412.0" layoutY="169.0" prefHeight="24.0" prefWidth="229.0" promptText="Username" style="-fx-prompt-text-fill: #ddc7c7; -fx-prompt-text-opacity: 0.8; -fx-text-fill: #3498db;" unFocusColor="#ddc7c7e5">
          <font>
             <Font name="Ubuntu" size="13.0" />
-         </font></JFXTextField>
-      <JFXPasswordField focusColor="#3498db" labelFloat="true" layoutX="412.0" layoutY="222.0" prefHeight="24.0" prefWidth="229.0" promptText="Password" style="-fx-text-fill: #3498db; -fx-prompt-text-fill: ddc7c7; -fx-prompt-text-opacity: 0.6;" unFocusColor="WHITE" />
-      <JFXButton buttonType="RAISED" layoutX="587.0" layoutY="279.0" mnemonicParsing="false" opacity="0.8" ripplerFill="#d3d9eb" style="-fx-background-color: #4d4d4d;" text="Login" textFill="#3498db" />
+         </font>
+      </JFXTextField>
+      <JFXPasswordField focusColor="#3498db"  fx:id="txtPassword" labelFloat="true" layoutX="412.0" layoutY="222.0" prefHeight="24.0" prefWidth="229.0" promptText="Password" style="-fx-text-fill: #3498db; -fx-prompt-text-fill: ddc7c7; -fx-prompt-text-opacity: 0.6;" unFocusColor="WHITE" />
+      <JFXButton buttonType="RAISED" fx:id="btnLogin" layoutX="587.0" layoutY="279.0" onAction="#clickLogin" mnemonicParsing="false" opacity="0.8" ripplerFill="#d3d9eb" style="-fx-background-color: #4d4d4d;" text="Login" textFill="#3498db" />
       <Circle fill="#ff3b1f" layoutX="689.0" layoutY="11.0" radius="8.0" stroke="TRANSPARENT" strokeType="INSIDE" />
       <JFXButton id="btnClose" fx:id="btnClose" layoutX="678.0" onAction="#clickClose" prefHeight="10.0" prefWidth="10.0" ripplerFill="#f20404" text="X" textFill="#940404">
          <font>

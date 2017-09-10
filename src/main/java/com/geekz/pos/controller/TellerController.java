@@ -9,21 +9,21 @@ public class TellerController {
 
 	final static Logger logger = Logger.getLogger(TellerController.class);
 
-	public void addNewTeller(String name, String tele) {
-		Teller teller = new Teller(name, tele);
-		logger.info("add New Teller -" + name + "," + tele);
+	public void addNewTeller(String username, String name, String password, String tele) {
+		Teller teller = new Teller(username, name, password, tele);
+		logger.info("add New Teller -" + username + "," + name + password + "," + tele);
 		HibernateOperator.getInstance().add(Teller.class, teller);
 	}
 
-	public Teller readTeller(Integer i) {
+	public Teller getTeller(String i) {
 		logger.info("add New Teller id -" + i );
 		Teller teller = (Teller) HibernateOperator.getInstance().read(Teller.class, i);
 		return teller;
 	}
 
-	public void editTellerInfo(Integer i, String name, String tele) {
-		Teller teller = new Teller(i, name, tele);
-		logger.info("add New Teller id -" + i + "," + name + "," + tele);
+	public void editTellerInfo(String username, String name, String password, String tele) {
+		Teller teller = new Teller(username, name, password, tele);
+		logger.info("add New Teller id -"+ username + "," + name + password + "," + tele);
 		HibernateOperator.getInstance().edit(Teller.class, teller);
 	}
 

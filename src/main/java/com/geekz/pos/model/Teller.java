@@ -1,13 +1,9 @@
 package com.geekz.pos.model;
 
-import static javax.persistence.GenerationType.IDENTITY;
-
 import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
@@ -15,12 +11,15 @@ import javax.persistence.OneToMany;
 public class Teller {
 
 	@Id
-	@GeneratedValue(strategy = IDENTITY)
-	private Integer idTeller;
+	@Column(length = 25)
+	private String userName;
 
 	@Column(length = 100)
 	private String name;
 
+	@Column(length = 25)
+	private String password;
+	
 	@Column(length = 15)
 	private String teleNo;
 
@@ -29,24 +28,12 @@ public class Teller {
 
 	public Teller() {
 	}
-
-	public Teller(String name, String tele) {
+	
+	public Teller(String username, String name, String password, String tele) {
+		this.userName = username;
 		this.name = name;
+		this.password =password;
 		this.teleNo = tele;
-	}
-
-	public Teller(Integer i, String name, String tele) {
-		this.idTeller = i;
-		this.name = name;
-		this.teleNo = tele;
-	}
-
-	public Integer getIdTeller() {
-		return idTeller;
-	}
-
-	public void setIdTeller(Integer idTeller) {
-		this.idTeller = idTeller;
 	}
 
 	public String getName() {
@@ -55,6 +42,22 @@ public class Teller {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public String getTeleNo() {

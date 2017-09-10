@@ -71,13 +71,14 @@ public class Main extends Application {
 
 	public static void main(String[] args) {
 		launch(args);
-		/*
-		 * GeekzORM orm = ORMFactory.getORM("hibernate");
-		 * 
-		 * TellerController teller = new TellerController();
-		 * teller.addNewTeller("Milinda", "0713264601"); Teller dbTeller =
-		 * teller.readTeller(1);
-		 * 
+		
+		//  GeekzORM orm = ORMFactory.getORM("hibernate");
+		  
+		//  TellerController teller = new TellerController();
+		//  teller.addNewTeller("msb","Milinda", "123123", "0713264601");
+		 /*
+		 * Teller dbTeller = teller.readTeller("sss");
+		 * System.out.println();
 		 * ClientController client = new ClientController();
 		 * client.addNewClient("Ama", "13/B 3rd lane", "21212", "2013/12/31");
 		 * Client dbclient = client.readTeller(1);

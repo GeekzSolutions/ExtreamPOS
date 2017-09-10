@@ -5,17 +5,23 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.net.URL;
 import java.util.Properties;
 
 public class PropertiesHandler {
-
+	
+	URL strFilePath = null;
 	Properties prop = new Properties();
 	InputStream input = null;
 	OutputStream output = null;
 
-	public String readFromPropertyFile(String file, String key) {
+	public PropertiesHandler(String filePath) {
+		strFilePath = getClass().getClassLoader().getResource(filePath);
+	}
+	
+	public String readFromPropertyFile(String key) {
 		try {
-			input = new FileInputStream(getClass().getClassLoader().getResource(file).toString());
+			input = new FileInputStream(strFilePath.getPath());
 			prop.load(input);
 			return prop.getProperty(key);
 		} catch (IOException ex) {
@@ -32,9 +38,9 @@ public class PropertiesHandler {
 		return null;
 	}
 
-	public void writeToPropertyFile(String file, String key, String value) {
+	public void writeToPropertyFile(String key, String value) {
 		try {
-			output = new FileOutputStream(getClass().getClassLoader().getResource(file).toString());
+			output = new FileOutputStream(strFilePath.getPath());
 			prop.setProperty(key,value);
 			prop.store(output, null);
 

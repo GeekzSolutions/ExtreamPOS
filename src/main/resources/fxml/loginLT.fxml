@@ -11,7 +11,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="360.0" prefWidth="700.0" style="-fx-background-color: #DCDCDC; -fx-background-radius: 6;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="geekz.pos.controllers.loginController">
+<AnchorPane prefHeight="360.0" prefWidth="700.0" style="-fx-background-color: #DCDCDC; -fx-background-radius: 6;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.geekz.pos.ui.controllers.loginController">
    <children>
       <ImageView fitHeight="360.0" fitWidth="351.0" layoutX="-1.0" layoutY="-1.0" opacity="0.19" pickOnBounds="true" style="-fx-border-radius: 6;">
          <image>

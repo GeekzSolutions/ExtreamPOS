@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="579.0" prefWidth="774.0" style="-fx-background-color: #3C3F41; -fx-background-radius: 6;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="geekz.pos.controllers.dashboardController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="579.0" prefWidth="774.0" style="-fx-background-color: #3C3F41; -fx-background-radius: 6;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.geekz.pos.ui.controllers.dashboardController">
    <children>
       <JFXButton layoutY="1.0" ripplerFill="#eef2f5" style="-fx-border-radius: 8;" text="Menu" textFill="#3498db" />
       <Pane layoutY="233.0" prefHeight="308.0" prefWidth="774.0" style="-fx-border-color: #3498db;" />

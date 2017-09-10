@@ -8,6 +8,8 @@ import java.io.OutputStream;
 import java.net.URL;
 import java.util.Properties;
 
+import org.apache.log4j.Logger;
+
 public class PropertiesHandler {
 	
 	URL strFilePath = null;
@@ -15,7 +17,10 @@ public class PropertiesHandler {
 	InputStream input = null;
 	OutputStream output = null;
 
+	final static Logger logger = Logger.getLogger(PropertiesHandler.class);
+	
 	public PropertiesHandler(String filePath) {
+		logger.info("read properties file - " + filePath);
 		strFilePath = getClass().getClassLoader().getResource(filePath);
 	}
 	
@@ -23,15 +28,18 @@ public class PropertiesHandler {
 		try {
 			input = new FileInputStream(strFilePath.getPath());
 			prop.load(input);
-			return prop.getProperty(key);
+			logger.info("load the properties file.");
+			String value = prop.getProperty(key);
+			logger.info("read "+ key + " - " + value);
+			return value;
 		} catch (IOException ex) {
-			ex.printStackTrace();
+			logger.error(ex);
 		} finally {
 			if (input != null) {
 				try {
 					input.close();
 				} catch (IOException e) {
-					e.printStackTrace();
+					logger.error(e);
 				}
 			}
 		}
@@ -41,17 +49,20 @@ public class PropertiesHandler {
 	public void writeToPropertyFile(String key, String value) {
 		try {
 			output = new FileOutputStream(strFilePath.getPath());
+			logger.info("load the properties file.");
 			prop.setProperty(key,value);
+			logger.info("write "+ key + " - " + value);
 			prop.store(output, null);
+			logger.info("Save the properties file.");
 
 		} catch (IOException io) {
-			io.printStackTrace();
+			logger.error(io);
 		} finally {
 			if (output != null) {
 				try {
 					output.close();
 				} catch (IOException e) {
-					e.printStackTrace();
+					logger.error(e);
 				}
 			}
 

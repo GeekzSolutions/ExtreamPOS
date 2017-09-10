@@ -22,7 +22,7 @@ public class LicenseHandler {
 		String computername = InetAddress.getLocalHost().getHostName();
 		byte[] mac = networkInterface.getHardwareAddress();
 		System.out.println("Mac - " + mac[0] + mac[1] +mac[2] +mac[3] +mac[4] +mac[5]);
-		System.out.println("comuterName = "+ computername);
+		System.out.println("computerName = "+ computername);
 		String machineUnique = mac[0] + mac[1] + salt +mac[2] +mac[3] + salt +mac[4] +mac[5]+ salt +computername;
 		return this.encryptionData(machineUnique);
 	}
@@ -38,6 +38,7 @@ public class LicenseHandler {
 		String propertyLicense = prop.readFromPropertyFile("pos.license");
 		try {
 			if(propertyLicense.equals(this.getLicense())) {
+				System.out.println("License is Acceptable.......");
 				return true;
 			}
 		} catch (SocketException e) {
@@ -47,7 +48,7 @@ public class LicenseHandler {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+		System.out.println("Invalid License.");
 		return false;
 	}
 

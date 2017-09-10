@@ -6,14 +6,19 @@ import java.net.SocketException;
 import java.net.UnknownHostException;
 
 import org.apache.commons.codec.digest.DigestUtils;
+import org.apache.log4j.Logger;
 
 public class LicenseHandler {
 
 	private String salt = "EXTREAMPOS";
 	
+	final static Logger logger = Logger.getLogger(LicenseHandler.class);
+	
 	public static void main(String[] args) {
+		logger.info(">	License Validation Starts");
 		LicenseHandler license = new LicenseHandler();
 		license.checkLicense();
+		logger.info(">	License Validation Finished");
 	}
 
 	private String getLicense() throws SocketException, UnknownHostException {
@@ -21,15 +26,14 @@ public class LicenseHandler {
 		NetworkInterface networkInterface = NetworkInterface.getByInetAddress(address);
 		String computername = InetAddress.getLocalHost().getHostName();
 		byte[] mac = networkInterface.getHardwareAddress();
-		System.out.println("Mac - " + mac[0] + mac[1] +mac[2] +mac[3] +mac[4] +mac[5]);
-		System.out.println("computerName = "+ computername);
+		logger.info("Mac Address = " + mac[0] + mac[1] +mac[2] +mac[3] +mac[4] +mac[5]);
+		logger.info("Computer Name = "+ computername);
 		String machineUnique = mac[0] + mac[1] + salt +mac[2] +mac[3] + salt +mac[4] +mac[5]+ salt +computername;
 		return this.encryptionData(machineUnique);
 	}
 
 	private String encryptionData(String value) {
 		String encryptedText = DigestUtils.sha1Hex(value);
-		System.out.println(encryptedText);
 		return encryptedText;
 	}
 	
@@ -38,7 +42,7 @@ public class LicenseHandler {
 		String propertyLicense = prop.readFromPropertyFile("pos.license");
 		try {
 			if(propertyLicense.equals(this.getLicense())) {
-				System.out.println("License is Acceptable.......");
+				logger.info("License is Acceptable.");
 				return true;
 			}
 		} catch (SocketException e) {
@@ -48,7 +52,7 @@ public class LicenseHandler {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.out.println("Invalid License.");
+		logger.error(">>>>> Invalid License <<<<<");
 		return false;
 	}
 

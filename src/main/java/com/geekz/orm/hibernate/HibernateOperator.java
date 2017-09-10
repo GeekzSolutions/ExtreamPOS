@@ -2,6 +2,7 @@ package com.geekz.orm.hibernate;
 
 import java.io.Serializable;
 
+import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -10,6 +11,7 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 
 import com.geekz.orm.GeekzORM;
+import com.geekz.orm.ORMFactory;
 import com.geekz.pos.model.Client;
 import com.geekz.pos.model.ClientOrder;
 import com.geekz.pos.model.ItemOrder;
@@ -20,15 +22,20 @@ public class HibernateOperator implements GeekzORM {
 
 	private static HibernateOperator instance = null;
 
+	final static Logger logger = Logger.getLogger(HibernateOperator.class);
+
+	SessionFactory factory = null;
+	
 	public static HibernateOperator getInstance() {
 		if (instance == null) {
+			logger.info("HIBERNATE ORM is initializing...");
 			instance = new HibernateOperator(); 
 			instance.config();
+			logger.info("ORM initialization is Success");
 		}
 		return instance;
 	}
 
-	SessionFactory factory = null;
 
 	private void config() {
 		Configuration configuration = new Configuration().configure();
@@ -55,10 +62,12 @@ public class HibernateOperator implements GeekzORM {
 		Object results = null;
 		try {
 			tx = sesn.beginTransaction();
+			logger.info("Hibernate Read - "+ clz.getName() + " get record ID : " + id);
 			results = sesn.get(clz, id);
 			tx.commit();
+			logger.info("Hibernate Read - Done");
 		} catch (HibernateException e) {
-			e.printStackTrace();
+			logger.error(e);
 		} finally {
 			sesn.close();
 		}
@@ -71,12 +80,16 @@ public class HibernateOperator implements GeekzORM {
 		Session session = factory.openSession();
 		try {
 			tx = session.beginTransaction();
+			logger.info("Hibernate Edit - "+ clz.getName());
 			session.update(saveObj);
 			tx.commit();
+			logger.info("Hibernate Edit - Done");
 		} catch (HibernateException ex) {
-			if (tx != null)
+			if (tx != null) {
 				tx.rollback();
-			ex.printStackTrace();
+				logger.info("rollback the transaction");
+			}
+			logger.error(ex);
 		} finally {
 			session.close();
 		}
@@ -88,12 +101,16 @@ public class HibernateOperator implements GeekzORM {
 		Session session = factory.openSession();
 		try {
 			tx = session.beginTransaction();
+			logger.info("Hibernate Add - "+ clz.getName());
 			Serializable savedID = session.save(saveObj);
 			tx.commit();
+			logger.info("Hibernate Add - Done");
 		} catch (HibernateException ex) {
-			if (tx != null)
+			if (tx != null) {
 				tx.rollback();
-			ex.printStackTrace();
+				logger.info("rollback the transaction");
+			}
+			logger.error(ex);
 		} finally {
 			session.close();
 		}

@@ -1,0 +1,33 @@
+2017-09-10 17:51:32 INFO  HibernateOperator:31 - HIBERNATE ORM is initializing...
+2017-09-10 17:51:32 INFO  Version:37 - HHH000412: Hibernate Core {5.1.0.Final}
+2017-09-10 17:51:32 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2017-09-10 17:51:32 INFO  Environment:317 - HHH000021: Bytecode provider name : javassist
+2017-09-10 17:51:32 WARN  deprecation:91 - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2017-09-10 17:51:33 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-09-10 17:51:33 WARN  connections:71 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2017-09-10 17:51:33 INFO  connections:127 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/geekzpos]
+2017-09-10 17:51:33 INFO  connections:136 - HHH10001001: Connection properties: {user=root, password=****, pool.size=10}
+2017-09-10 17:51:33 INFO  connections:141 - HHH10001003: Autocommit mode: false
+2017-09-10 17:51:33 INFO  DriverManagerConnectionProviderImpl:39 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-09-10 17:54:51 INFO  HibernateOperator:31 - HIBERNATE ORM is initializing...
+2017-09-10 17:54:51 INFO  Version:37 - HHH000412: Hibernate Core {5.1.0.Final}
+2017-09-10 17:54:51 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2017-09-10 17:54:51 INFO  Environment:317 - HHH000021: Bytecode provider name : javassist
+2017-09-10 17:54:51 WARN  deprecation:91 - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2017-09-10 17:54:51 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-09-10 17:54:51 WARN  connections:71 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2017-09-10 17:54:51 INFO  connections:127 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/geekzpos]
+2017-09-10 17:54:51 INFO  connections:136 - HHH10001001: Connection properties: {user=root, password=****, pool.size=10}
+2017-09-10 17:54:51 INFO  connections:141 - HHH10001003: Autocommit mode: false
+2017-09-10 17:54:51 INFO  DriverManagerConnectionProviderImpl:39 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-09-10 21:34:27 INFO  HibernateOperator:31 - HIBERNATE ORM is initializing...
+2017-09-10 21:34:28 INFO  Version:37 - HHH000412: Hibernate Core {5.1.0.Final}
+2017-09-10 21:34:28 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2017-09-10 21:34:28 INFO  Environment:317 - HHH000021: Bytecode provider name : javassist
+2017-09-10 21:34:28 WARN  deprecation:91 - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2017-09-10 21:34:28 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-09-10 21:34:28 WARN  connections:71 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2017-09-10 21:34:28 INFO  connections:127 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/geekzpos]
+2017-09-10 21:34:28 INFO  connections:136 - HHH10001001: Connection properties: {user=root, password=****, pool.size=10}
+2017-09-10 21:34:28 INFO  connections:141 - HHH10001003: Autocommit mode: false
+2017-09-10 21:34:28 INFO  DriverManagerConnectionProviderImpl:39 - HHH000115: Hibernate connection pool size: 20 (min=1)

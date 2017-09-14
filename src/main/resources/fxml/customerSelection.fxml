@@ -1,26 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="579.0" prefWidth="774.0" style="-fx-background-color: #3C3F41; -fx-background-radius: 6;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.geekz.pos.ui.controllers.dashboardController">
    <children>
-      <JFXButton layoutY="1.0" ripplerFill="#eef2f5" style="-fx-border-radius: 8;" text="Menu" textFill="#3498db" />
-      <Pane layoutY="233.0" prefHeight="308.0" prefWidth="774.0" style="-fx-border-color: #3498db;" />
-      <Label layoutX="299.0" layoutY="26.0" text="Customer Selection" textFill="#3498db">
+      <Pane layoutY="233.0" prefHeight="308.0" prefWidth="774.0" style="-fx-border-color: #3498db;">
+         <children>
+            <JFXTextField layoutX="114.0" layoutY="58.0" prefHeight="24.0" prefWidth="259.0" promptText="Customer Name" style="-fx-prompt-text-fill: white; -fx-prompt-text-opacity: 0.8; -fx-text-fill: #3498db;" />
+            <JFXButton buttonType="RAISED" layoutX="562.0" layoutY="76.0" prefHeight="26.0" prefWidth="69.0" style="-fx-background-color: #3498db;" text="Save" textFill="#ebe3e3" />
+            <JFXButton buttonType="RAISED" layoutX="562.0" layoutY="203.0" prefHeight="26.0" prefWidth="69.0" style="-fx-background-color: #932222;" text="Cancel" textFill="#e8e2e2" />
+            <JFXButton buttonType="RAISED" layoutX="563.0" layoutY="138.0" prefHeight="26.0" prefWidth="69.0" style="-fx-background-color: #3C3F44;" text="Clear" textFill="#ebe4e4" />
+            <JFXTextField layoutX="114.0" layoutY="114.0" prefHeight="24.0" prefWidth="259.0" promptText="Customer Address" style="-fx-prompt-text-fill: white; -fx-prompt-text-opacity: 0.8; -fx-text-fill: #3498db;" />
+            <JFXTextField layoutX="113.0" layoutY="167.0" prefHeight="24.0" prefWidth="259.0" promptText="Identity Card Number" style="-fx-prompt-text-fill: white; -fx-prompt-text-opacity: 0.8; -fx-text-fill: #3498db;" />
+            <JFXTextField layoutX="113.0" layoutY="217.0" prefHeight="24.0" prefWidth="259.0" promptText="Mobile Number" style="-fx-prompt-text-fill: white; -fx-prompt-text-opacity: 0.8; -fx-text-fill: #3498db;" />
+         </children></Pane>
+      <Label layoutX="299.0" layoutY="81.0" text="Customer Selection" textFill="#3498db">
          <font>
             <Font name="Ubuntu" size="20.0" />
          </font>
       </Label>
-      <JFXButton layoutX="147.0" layoutY="93.0" text="New Customer" textFill="#938a8a" />
-      <JFXButton layoutX="455.0" layoutY="90.0" text="Registered Customer" textFill="#938a8a" />
-      <JFXButton layoutX="713.0" layoutY="552.0" style="-fx-border-radius: 6; -fx-border-color: #534f4f;" text="Skip.." textFill="#d33b3b">
+      <JFXButton buttonType="RAISED" layoutX="147.0" layoutY="163.0" prefHeight="26.0" prefWidth="156.0" style="-fx-background-color: #3C3F44;" text="New Customer" textFill="#938a8a" />
+      <JFXButton buttonType="RAISED" layoutX="455.0" layoutY="160.0" style="-fx-background-color: #3C3F44;" text="Registered Customer" textFill="#938a8a" />
+      <JFXButton layoutX="717.0" layoutY="546.0" style="-fx-border-radius: 6; -fx-border-color: #534f4f;" text="Skip" textFill="#d33b3b">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </JFXButton>
+      <Pane layoutY="4.0" prefHeight="70.0" prefWidth="774.0">
+         <children>
+            <JFXHamburger id="menu-hamburger" layoutX="125.0" layoutY="11.0" prefHeight="15.0" prefWidth="20.0" styleClass="jfx-hamburger-icon">
+               <stylesheets>
+                  <URL value="@../images/itemsCartStyles.css" />
+                  <URL value="@../css/itemsCartStyles.css" />
+               </stylesheets>
+            </JFXHamburger>
+            <Label layoutX="39.0" layoutY="11.0" text="Geekz Mills" textFill="#3498db" />
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="738.0" layoutY="31.0" pickOnBounds="true" style="-fx-background-radius: 8;">
+               <image>
+                  <Image url="@../images/posBackground.jpeg" />
+               </image>
+            </ImageView>
+            <Label layoutX="640.0" layoutY="40.0" text="Teller's Name" textFill="#3498db" />
+            <Circle fill="#f52d17" layoutX="762.0" layoutY="8.0" radius="8.0" stroke="#f52d17" strokeType="INSIDE" />
+            <Circle fill="#e3ea16" layoutX="741.0" layoutY="8.0" radius="8.0" stroke="#e3ea16" strokeType="INSIDE" />
+            <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="5.0" layoutY="4.0" pickOnBounds="true" style="-fx-background-radius: 6;">
+               <image>
+                  <Image url="@../images/geekzLogoFavicon.png" />
+               </image>
+            </ImageView>
+            <JFXButton layoutX="753.0" prefHeight="7.0" prefWidth="1.0" text="X">
+               <font>
+                  <Font size="9.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="733.0" layoutY="-3.0" prefHeight="7.0" prefWidth="1.0" text="_">
+               <font>
+                  <Font size="9.0" />
+               </font>
+            </JFXButton>
+            <JFXTextField alignment="CENTER" layoutX="571.0" layoutY="-3.0" prefHeight="0.0" prefWidth="155.0" promptText="Quick Launch" style="-fx-prompt-text-fill: #CCCCCC; -fx-prompt-text-opacity: 0.8;" unFocusColor="#516ada">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </JFXTextField>
+            <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="712.0" layoutY="2.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../images/search.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

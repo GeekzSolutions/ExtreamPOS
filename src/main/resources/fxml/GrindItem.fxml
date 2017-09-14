@@ -56,7 +56,13 @@
                   <Image url="@../images/search.png" />
                </image>
             </ImageView>
+            <Label layoutX="333.0" layoutY="6.0" text="Grind Item" textFill="#3498db">
+               <font>
+                  <Font name="Ubuntu" size="20.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
+      <JFXTextField layoutX="65.0" layoutY="126.0" promptText="Item Name" />
    </children>
 </AnchorPane>

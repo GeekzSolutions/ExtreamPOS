@@ -10,9 +10,10 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="800.0" style="-fx-background-color: #3C3F41; -fx-background-radius: 6;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="383.0" prefWidth="800.0" style="-fx-background-color: #3C3F41; -fx-background-radius: 6;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Pane layoutX="2.0" layoutY="6.0" prefHeight="70.0" prefWidth="800.0">
          <children>
@@ -56,7 +57,36 @@
                   <Image url="@../images/search.png" />
                </image>
             </ImageView>
+            <Label layoutX="302.0" layoutY="15.0" text="Transaction Summary" textFill="#3498db">
+               <font>
+                  <Font name="Ubuntu" size="20.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
+      <Label layoutX="93.0" layoutY="146.0" text="Item Name" textFill="#f5eded" />
+      <Label layoutX="95.0" layoutY="179.0" text="Amount" textFill="#f5eded" />
+      <Label layoutX="99.0" layoutY="210.0" text="Unit Price" textFill="#f5eded" />
+      <Label layoutX="94.0" layoutY="242.0" text="Total Charge" textFill="#f5eded" />
+      <JFXButton buttonType="RAISED" layoutX="93.0" layoutY="290.0" style="-fx-background-color: #348a8a;" text="Print Bill" textFill="#e4dbdb" />
+      <JFXButton buttonType="RAISED" layoutX="222.0" layoutY="290.0" style="-fx-background-color: #348a8a;" text="Print Barcode" textFill="#e4dbdb" />
+      <Label layoutX="230.0" layoutY="143.0" prefHeight="16.0" prefWidth="195.0" text="Item Name" textFill="#f5eded" />
+      <Label layoutX="230.0" layoutY="179.0" prefHeight="16.0" prefWidth="52.0" text="2.0" textFill="#f5eded" />
+      <Label layoutX="266.0" layoutY="209.0" prefHeight="16.0" prefWidth="195.0" text="10.00" textFill="#f5eded" />
+      <Label layoutX="266.0" layoutY="242.0" prefHeight="16.0" prefWidth="195.0" text="1000.00" textFill="#f5eded" />
+      <Label layoutX="228.0" layoutY="242.0" text="LKR" textFill="#f5eded" />
+      <Label layoutX="228.0" layoutY="209.0" text="LKR" textFill="#f5eded" />
+      <Label layoutX="299.0" layoutY="179.0" text="Kg" textFill="#f5eded" />
+      <Line endX="100.0" layoutX="418.0" layoutY="232.0" rotate="90.0" startX="-100.0" stroke="#dbd7d791" />
+      <ImageView fitHeight="146.0" fitWidth="195.0" layoutX="503.0" layoutY="154.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/transactionComplete.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="91.0" fitWidth="115.0" layoutX="612.0" layoutY="232.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/paid.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

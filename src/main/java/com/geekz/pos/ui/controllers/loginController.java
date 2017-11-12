@@ -1,5 +1,7 @@
 package com.geekz.pos.ui.controllers;
 
+import java.io.IOException;
+
 import com.geekz.pos.operation.TellerOperation;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
@@ -7,10 +9,14 @@ import com.jfoenix.controls.JFXTextField;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 public class loginController
 {
-
     public void pressButton(ActionEvent event)
     {
         System.out.println("Hello World");
@@ -32,7 +38,7 @@ public class loginController
     }
     
     @FXML
-    void clickLogin(ActionEvent event)
+    void clickLogin(ActionEvent event) throws IOException
     {
     	String username = txtUsername.getText();
     	String password = txtPassword.getText();
@@ -42,5 +48,14 @@ public class loginController
     	boolean loginResult = teller.login(username, password);
     	
     	System.out.println("Login Effort - "+ loginResult);
+    	if(loginResult)
+    	{
+    		Parent grindItemParent = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/customerSelection.fxml"));
+    		Scene grindItemScene = new Scene(grindItemParent);
+    	
+    		Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+    		window.setScene(grindItemScene);
+    		window.show();
+    	}
     }
 }

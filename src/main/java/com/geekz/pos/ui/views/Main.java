@@ -1,16 +1,5 @@
 package com.geekz.pos.ui.views;
 
-import java.io.FileInputStream;
-import java.io.InputStream;
-import java.net.URL;
-
-import com.geekz.orm.GeekzORM;
-import com.geekz.orm.ORMFactory;
-import com.geekz.pos.controller.*;
-import com.geekz.pos.model.Client;
-import com.geekz.pos.model.ClientOrder;
-import com.geekz.pos.model.ItemRepo;
-import com.geekz.pos.model.Teller;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -26,7 +15,7 @@ public class Main extends Application {
 	private double yOffset = 0;
 
 	@Override
-	public void start(final Stage primaryStage) throws Exception {
+	public void start(Stage primaryStage) throws Exception {
 		try {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(getClass().getClassLoader().getResource("fxml/login.fxml"));
@@ -35,7 +24,7 @@ public class Main extends Application {
 			// remove window borders
 			primaryStage.initStyle(StageStyle.UNDECORATED);
 			// make window movable
-			root.setOnMousePressed(new EventHandler<MouseEvent>() {
+			/*root.setOnMousePressed(new EventHandler<MouseEvent>() {
 				public void handle(MouseEvent event) {
 					xOffset = event.getSceneX();
 					yOffset = event.getSceneY();
@@ -54,7 +43,7 @@ public class Main extends Application {
 				public void handle(MouseEvent event) {
 					primaryStage.setOpacity(1.0);
 				}
-			});
+			});*/
 
 			// create a scene
 			Scene scene = new Scene(root);

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="383.0" prefWidth="800.0" style="-fx-background-color: #3C3F41; -fx-background-radius: 6;" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.geekz.pos.ui.controllers.transactionSummaryController">
+   <children>
+      <Pane layoutX="2.0" layoutY="6.0" prefHeight="70.0" prefWidth="800.0">
+         <children>
+            <JFXHamburger id="menu-hamburger" layoutX="125.0" layoutY="11.0" prefHeight="15.0" prefWidth="20.0" styleClass="jfx-hamburger-icon">
+               <stylesheets>
+                  <URL value="@../images/itemsCartStyles.css" />
+                  <URL value="@../css/itemsCartStyles.css" />
+               </stylesheets>
+            </JFXHamburger>
+            <Label layoutX="39.0" layoutY="11.0" text="Geekz Mills" textFill="#3498db" />
+            <ImageView fx:id="imgTellerImage" fitHeight="30.0" fitWidth="30.0" layoutX="761.0" layoutY="29.0" pickOnBounds="true" style="-fx-background-radius: 8;">
+               <image>
+                  <Image url="@../images/posBackground.jpeg" />
+               </image>
+            </ImageView>
+            <Label fx:id="lblTellersName" layoutX="663.0" layoutY="38.0" text="Teller's Name" textFill="#3498db" />
+            <Circle fill="#f52d17" layoutX="785.0" layoutY="6.0" radius="8.0" stroke="#f52d17" strokeType="INSIDE" />
+            <Circle fill="#e3ea16" layoutX="764.0" layoutY="6.0" radius="8.0" stroke="#e3ea16" strokeType="INSIDE" />
+            <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="5.0" layoutY="4.0" pickOnBounds="true" style="-fx-background-radius: 6;">
+               <image>
+                  <Image url="@../images/geekzLogoFavicon.png" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="btnClose" layoutX="776.0" layoutY="-2.0" onAction="#clickClose" prefHeight="7.0" prefWidth="1.0" text="X">
+               <font>
+                  <Font size="9.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btnMinimize" layoutX="756.0" layoutY="-5.0" onAction="#clickMinimize" prefHeight="7.0" prefWidth="1.0" text="_">
+               <font>
+                  <Font size="9.0" />
+               </font>
+            </JFXButton>
+            <JFXTextField fx:id="txtQuickLaunch" alignment="CENTER" layoutX="594.0" layoutY="-5.0" onAction="#QuickLaunchSearch" prefHeight="0.0" prefWidth="155.0" promptText="Quick Launch" style="-fx-prompt-text-fill: #CCCCCC; -fx-prompt-text-opacity: 0.8;" unFocusColor="#516ada">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </JFXTextField>
+            <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="735.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../images/search.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="302.0" layoutY="15.0" text="Transaction Summary" textFill="#3498db">
+               <font>
+                  <Font name="Ubuntu" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Label layoutX="93.0" layoutY="146.0" text="Transaction ID" textFill="#f5eded" />
+      <Label layoutX="95.0" layoutY="179.0" text="Amount" textFill="#f5eded" />
+      <Label layoutX="97.0" layoutY="210.0" text="# of Items" textFill="#f5eded" />
+      <Label layoutX="94.0" layoutY="242.0" text="Total Charge" textFill="#f5eded" />
+      <JFXButton fx:id="btnPrintBill" buttonType="RAISED" layoutX="93.0" layoutY="290.0" onAction="#clickPrintBill" style="-fx-background-color: #348a8a;" text="Print Bill" textFill="#e4dbdb" />
+      <JFXButton fx:id="btnPrintBarCode" buttonType="RAISED" layoutX="222.0" layoutY="290.0" onAction="#clickPrintBarCode" style="-fx-background-color: #348a8a;" text="Print Barcode" textFill="#e4dbdb" />
+      <Label fx:id="lblTransactionID" layoutX="230.0" layoutY="143.0" prefHeight="16.0" prefWidth="195.0" text="123456789" textFill="#f5eded" />
+      <Label fx:id="lblAmount" layoutX="230.0" layoutY="179.0" prefHeight="16.0" prefWidth="52.0" text="2.0" textFill="#f5eded" />
+      <Label fx:id="lblTotalCharge" layoutX="266.0" layoutY="242.0" prefHeight="16.0" prefWidth="195.0" text="1000.00" textFill="#f5eded" />
+      <Label layoutX="228.0" layoutY="242.0" text="LKR" textFill="#f5eded" />
+      <Label fx:id="lblNoofItems" layoutX="228.0" layoutY="209.0" text="02" textFill="#f5eded" />
+      <Label layoutX="299.0" layoutY="179.0" text="Kg" textFill="#f5eded" />
+      <Line endX="100.0" layoutX="418.0" layoutY="232.0" rotate="90.0" startX="-100.0" stroke="#dbd7d791" />
+      <ImageView fitHeight="146.0" fitWidth="195.0" layoutX="503.0" layoutY="148.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/transactionComplete.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="91.0" fitWidth="115.0" layoutX="612.0" layoutY="226.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/paid.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

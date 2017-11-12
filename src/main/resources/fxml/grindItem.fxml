@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="800.0" style="-fx-background-color: #3C3F41; -fx-background-radius: 6;" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.geekz.pos.ui.controllers.grindItemController">
+   <children>
+      <Pane layoutX="2.0" layoutY="6.0" prefHeight="70.0" prefWidth="800.0">
+         <children>
+            <JFXHamburger id="menu-hamburger" layoutX="125.0" layoutY="11.0" prefHeight="15.0" prefWidth="20.0" styleClass="jfx-hamburger-icon">
+               <stylesheets>
+                  <URL value="@../images/itemsCartStyles.css" />
+                  <URL value="@../css/itemsCartStyles.css" />
+               </stylesheets>
+            </JFXHamburger>
+            <Label layoutX="39.0" layoutY="11.0" text="Geekz Mills" textFill="#3498db" />
+            <ImageView fx:id="imgTellerImage" fitHeight="30.0" fitWidth="30.0" layoutX="761.0" layoutY="29.0" pickOnBounds="true" style="-fx-background-radius: 8;">
+               <image>
+                  <Image url="@../images/posBackground.jpeg" />
+               </image>
+            </ImageView>
+            <Label fx:id="lblTellersName" layoutX="663.0" layoutY="38.0" text="Teller's Name" textFill="#3498db" />
+            <Circle fill="#f52d17" layoutX="785.0" layoutY="6.0" radius="8.0" stroke="#f52d17" strokeType="INSIDE" />
+            <Circle fill="#e3ea16" layoutX="764.0" layoutY="6.0" radius="8.0" stroke="#e3ea16" strokeType="INSIDE" />
+            <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="5.0" layoutY="4.0" pickOnBounds="true" style="-fx-background-radius: 6;">
+               <image>
+                  <Image url="@../images/geekzLogoFavicon.png" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="btnClose" layoutX="776.0" layoutY="-2.0" onAction="#clickClose" prefHeight="7.0" prefWidth="1.0" text="X">
+               <font>
+                  <Font size="9.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btnMinimize" layoutX="756.0" layoutY="-5.0" onAction="#clickMinimize" prefHeight="7.0" prefWidth="1.0" text="_">
+               <font>
+                  <Font size="9.0" />
+               </font>
+            </JFXButton>
+            <JFXTextField fx:id="txtQuickLaunch" alignment="CENTER" layoutX="594.0" layoutY="-5.0" onAction="#QuickLaunchSearch" prefHeight="0.0" prefWidth="155.0" promptText="Quick Launch" style="-fx-prompt-text-fill: #CCCCCC; -fx-prompt-text-opacity: 0.8;" unFocusColor="#516ada">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </JFXTextField>
+            <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="735.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../images/search.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="333.0" layoutY="6.0" text="Grind Item" textFill="#3498db">
+               <font>
+                  <Font name="Ubuntu" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <JFXTextField fx:id="txtAmount" alignment="CENTER" layoutX="547.0" layoutY="117.0" prefHeight="24.0" prefWidth="73.0" promptText="Amount" style="-fx-prompt-text-fill: white;" />
+      <JFXComboBox fx:id="cmbItemID" layoutX="45.0" layoutY="113.0" prefHeight="26.0" prefWidth="219.0" promptText="Item ID" style="-fx-text-fill: #ddc7c7;" styleClass="jfx-combo-box" stylesheets="@../css/jfxComboBox.css" />
+      <JFXComboBox fx:id="cmbItemName" layoutX="299.0" layoutY="116.0" prefHeight="26.0" prefWidth="219.0" promptText="Item Name" style="-fx-text-fill: #ddc7c7;" styleClass="jfx-combo-box" stylesheets="@../css/jfxComboBox.css" />
+      <Label layoutX="625.0" layoutY="121.0" text="Kg" textFill="#ddd6d6" />
+      <Label layoutX="45.0" layoutY="184.0" text="Unit Price (LKR) = " textFill="#ddd6d6" />
+      <Label layoutX="299.0" layoutY="182.0" text="Total Price (LKR) = " textFill="#ddd6d6" />
+      <Label layoutX="547.0" layoutY="184.0" text="Discount Rate (%) = " textFill="#ddd6d6" />
+      <Label fx:id="lblUnitPrice" layoutX="173.0" layoutY="184.0" text="12.50" textFill="#ddd6d6" />
+      <Label fx:id="lblTotalPrice" layoutX="433.0" layoutY="181.0" text="125.00" textFill="#ddd6d6" />
+      <JFXTextField fx:id="txtDiscount" alignment="CENTER" layoutX="689.0" layoutY="180.0" prefHeight="24.0" prefWidth="32.0" promptText="10" style="-fx-prompt-text-fill: white;" />
+      <JFXButton fx:id="btnSubmit" buttonType="RAISED" layoutX="674.0" layoutY="116.0" onAction="#clickSubmit" prefHeight="26.0" prefWidth="81.0" style="-fx-background-color: #348888;" text="Submit" textFill="#eedfdf" />
+      <Line endX="600.0" layoutX="146.0" layoutY="516.0" startX="-100.0" stroke="#6b6767" />
+      <Label layoutX="55.0" layoutY="539.0" text="Total = " textFill="#ddd6d6" />
+      <Label layoutX="52.0" layoutY="567.0" text="Disscounts = " textFill="#ddd6d6" />
+      <Label layoutX="51.0" layoutY="593.0" text="Grand Total = " textFill="#ddd6d6" />
+      <JFXButton fx:id="btnProceed" buttonType="RAISED" layoutX="646.0" layoutY="553.0" onAction="#clickProceed" prefHeight="41.0" prefWidth="102.0" style="-fx-background-color: #348888;" text="Proceed" textFill="#eedfdf">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>
